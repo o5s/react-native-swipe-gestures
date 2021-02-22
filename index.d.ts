@@ -1,9 +1,6 @@
-declare module 'react-native-swipe-gestures' {
-  import { Component } from 'react';
-  import {
-    PanResponderGestureState,
-    ViewProps
-  } from 'react-native';
+declare module "react-native-swipe-gestures" {
+  import { Component } from "react";
+  import { PanResponderGestureState, ViewProps } from "react-native";
 
   export interface GestureRecognizerProps extends ViewProps {
     config?: GestureRecognizerConfig;
@@ -32,6 +29,15 @@ declare module 'react-native-swipe-gestures' {
      * @default 5
      */
     gestureIsClickThreshold?: number;
+
+    /**
+     * Disable swipe detection that will cause iOS haywire
+     * @default true
+     */
+    detectSwipeUp?: boolean;
+    detectSwipeDown?: boolean;
+    detectSwipeLeft?: boolean;
+    detectSwipeRight?: boolean;
   }
 
   class GestureRecognizer extends Component<GestureRecognizerProps> {}
